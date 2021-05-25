@@ -1,0 +1,258 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+:root {
+    --text: rgb(0, 0, 0);
+    --background: rgb(118, 173, 139);
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    color: var(--text);
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    margin: 0;
+    font-weight: 400;
+    background: black;
+}
+
+.item1 { grid-area: header; }
+.item2 { grid-area: greeting; }
+.item3 { grid-area: about-me; }
+.item4 { grid-area: projects; }
+.item5 { grid-area: contact-me }
+.item6 { grid-area: footer; }
+
+.container{
+    grid-template-areas: 
+    'header header header header header'
+    '..greeting..'
+    '..about-me..'
+    '.projects projects projects.'
+    '..contact-me..'
+    'footer footer footer footer'
+    ;
+    background: white;
+    border-radius:4px;
+}
+
+.header1{
+    display:grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-areas: 'logo . . navbar';
+    background:rgb(118, 173, 139);
+    opacity:.75;
+    overflow: hidden;
+    position: fixed;
+    width:100%;
+    margin-top: -2rem;
+    padding-top: 2rem;
+    border-radius:4px;
+    z-index: 999;
+    box-shadow: 0px 5px 5px black;
+}
+.header2{
+    display: none;
+}
+.logo{
+    grid-area: logo;
+    margin-top:1rem;
+    margin-left: 1rem;
+    max-height:3rem;
+}
+.navbar{
+    grid-area: navbar;  
+}    
+
+nav ul{
+    display:grid;
+    grid-template-columns: repeat(4, auto);
+    padding-top: 2rem;   
+}
+nav a:hover{
+    color:white;
+}
+
+.nav-toggle{
+    display:none;
+}
+
+.greeting-container{
+    display:flex;
+    margin:auto;
+    padding-top: 10rem;
+    min-height:55rem;
+    justify-content: center;
+    width:100%;
+    box-shadow: 0px 5px 5px black;
+    z-index: 1;
+}
+.greeting{
+    text-align: left; 
+    font-size: 4rem;
+    padding:0; 
+}
+.designer{
+    transition-duration: 300ms;
+}
+.designer:hover{
+    color:rgb(118, 173, 139);
+}
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  .hello {  
+    opacity: 0;
+    animation: 2s ease 1.5s 1 fadeIn;
+    animation-delay: .5s;
+    animation-fill-mode: forwards;
+  }
+  .my-name {
+    opacity: 0;
+    animation: 2s ease 1.5s 1 fadeIn;
+    animation-delay: 4.5s;
+    animation-fill-mode: forwards;
+  }
+  .i-am {
+    opacity:0;
+    animation: 2s ease-out 0s 1 slideInFromRight;
+    animation-delay: 1.2s;
+    animation-fill-mode: forwards;
+  }
+  .living-in {
+    opacity:0;
+    animation: 2s ease-out 0s 1 slideInFromLeft;
+    animation-delay: 1.2s;
+    animation-fill-mode: forwards;   
+  }
+
+  @media (max-width: 781px){
+    .header1{
+        display:none;
+    }  
+    .header2 {
+        display:block;
+        opacity: .75;
+        background: var(--background);
+        text-align: center;
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+    }
+    .nav-toggle {
+        display: none;   
+    }
+    input[type=checkbox] {
+        transform: scale(1);
+        
+    }
+    .nav-toggle-label {
+        position: absolute;
+        top:0;
+        left:0;
+        margin-left: 1em;
+        height:100%;
+        display:flex;
+        align-items: center;
+        z-index: 999;
+    }
+    
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        background: white;
+        height: 4px;
+        width: 2em;
+        border-radius: 2px;
+        position: relative;
+    }
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        content:'';
+        position: absolute;
+    }
+    .nav-toggle-label span::before {
+        bottom: 10px;
+    }
+    .nav-toggle-label span::after {
+        top: 10px;
+    }
+    
+    nav {
+        position: absolute;
+        text-align: left;
+        top:100%;
+        left:0;
+        background: var(--background);
+        width: 100%;
+        transform: scale(1, 0);
+        transform-origin: top;
+        transition: transform 400ms ease-in-out;
+    }
+    
+    nav ul {
+        display:block;
+        background: var(--background);
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        
+    }
+    
+    nav li {
+        margin-bottom: 1em;
+        margin-left: 1em;
+    }
+    
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        opacity:0;
+        transition: opacity 150ms ease-in-out;
+    }
+    
+    nav a:hover {
+        color: black;
+    }
+    
+    .nav-toggle:checked ~ nav {
+        transform: scale(1,1);
+    }
+    
+    .nav-toggle:checked ~ nav a {
+        opacity:1;
+        transition: opacity 250ms ease-in-out 250ms;
+    }
+} 
