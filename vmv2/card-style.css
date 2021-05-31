@@ -1,0 +1,175 @@
+:root {
+  --clr-neutral-900: hsl(207, 19%, 9%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-accent-400: hsl(142, 90%, 61%);
+  --background: rgb(118, 173, 139);
+  --transition: transform 500ms ease;
+}
+
+.card-container *,
+.card-container *::before,
+.card-container *::after {
+  box-sizing: border-box;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    auto
+  );
+  min-height: 20vh;
+  place-items: center;
+  line-height: 1.6;
+  background: transparent;
+  font-family: sans-serif;
+}
+
+.card {
+  color: var(--clr-neutral-100);
+  background-size: cover;
+  padding: 0.25rem 0 0;
+  max-width: 20ch;
+  /*ch is character width*/
+  border-radius: 0.5rem;
+  /*allows border-radius to be seen on bottom and hides bottom of .card-content */
+  overflow: hidden;
+  transition: var(--transition);
+  /*transition for .card:hover transform*/
+}
+
+.card-1 {
+  background-image: url(./technicalDocumentationScreenShot.jpg);
+}
+
+.card-2 {
+  background-image: url(./blackjack-screenshot.jpg);
+}
+
+.card-3 {
+  background-image: url(#);
+}
+
+.card:hover,
+.card:focus-within {
+  transform: scale(1.05);
+  /*.card grow on hover*/
+  -webkit-box-shadow: 0 8px 6px -6px var(--clr-neutral-900);
+  -moz-box-shadow: 0 8px 6px -6px var(--clr-neutral-900);
+  box-shadow: 0 8px 6px -6px var(--clr-neutral-900);
+}
+
+.card-content {
+  --padding: 1.5rem;
+  /*creates local variable which can be used with any of .card's children*/
+  padding: var(--padding);
+  background: linear-gradient(
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1)
+  );
+  transform: translateY(55%);
+  /*moves text down in card*/
+  transition: var(--transition);
+}
+
+.card:hover .card-content,
+.card:focus-within .card-content {
+  transform: translateY(0%);
+  /*endpoint of .card-content transform*/
+  transition-delay: 500ms;
+}
+
+.card:focus-within .card-content {
+  transition-duration: 0ms;
+}
+
+.card-content > *:not(.card-title) {
+  opacity: 0;
+  transition: opacity 750ms linear;
+}
+
+.card:hover
+  .card-content
+  > *:not(.card-title),
+.card:focus-within
+  .card-content
+  > *:not(.card-title) {
+  opacity: 1;
+  transition-delay: 1000ms;
+}
+
+.card-title {
+  position: relative;
+  width: max-content;
+}
+
+.card-title::after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  left: calc(var(--padding) * -1);
+  bottom: 0;
+  width: calc(100% + var(--padding));
+  background: var(--background);
+  transform: scale(0);
+  transform-origin: left;
+  /*where line transformation begins*/
+  transition: var(--transition);
+}
+
+.card:hover .card-title::after,
+.card:focus-within .card-title::after {
+  transform: scaleX(1);
+}
+
+.card-body {
+  color: rgb(255, 255, 255 / 0.85);
+}
+
+.button {
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  color: var(--clr-neutral-900);
+  background-color: var(
+    --clr-accent-400
+  );
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(
+    --clr-neutral-100
+  );
+}
+
+@media (max-width: 781px) {
+  .card-container {
+    display: grid;
+    grid-template-columns: auto;
+    min-height: 20vh;
+    place-items: center;
+    line-height: 1.6;
+    background: transparent;
+    font-family: sans-serif;
+  }
+
+  .card {
+    margin-bottom: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-container *,
+  .card-container *::before,
+  .card-container *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0ms !important;
+  }
+}

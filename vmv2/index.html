@@ -1,82 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-    <link rel="stylesheet" href="vmv2.css">
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-  />
-</head>
-<body>
-    <div class="container">
-        <header class="header1 item1">
-            <img class="logo" src="vmdc-logo-white.png" />
-            <div class="social-links">
-                <a href="https://codepen.io/vmikell" target="_blank">
-                    <i class="fab fa-codepen codepen"></i></a>
-                <a href="https://github.com/vmikell" target="_blank">
-                    <i class="fab fa-github github"></i></a>
-                <a href="https://twitter.com/MikellVictor" target="_blank">
-                    <i class="fab fa-twitter twitter" ></i></a>
-            </div>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="#">home</a></li>
-                    <li><a href="#">about me</a></li>
-                    <li><a href="#">projects</a></li>
-                    <li><a href="#">contact me</a></li>    
-                </ul>
-            </nav>
-            </label>
-        </header>
-        <header class="header2">
-            <img class="logo" src="/html/vmv2/vmdc-logo-white.png" />
-            <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About me</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-            <label for="nav-toggle" class="nav-toggle-label"><span></span>
-            </label>
-        </header>
-        <div class="greeting-container">
-            <section class=" greeting item2">
-                <div class="hello"> 
-                    Hello,
-                </div>
-                <div class="my-name">
-                    my name is Victor.
-                </div>
-                <div class="i-am">
-                    I am a <span class="designer">Designer</span> / Front End Developer,
-                </div>
-                <div class="living-in">
-                    living in New England.
-                </div>
-                </div>
-            </section>
-        </div>
-        <div class="about-me-container">
-            <section class="about-me item3">about me</section>
-        </div>
-        <div class="projects-container">
-            <section class="projects item4">projects</section>
-        </div>
-        <div class="contact-me-container">
-            <section class="contact-me item5">contact me</section>
-        </div>
-        <div class="footer-container">
-            <section class="footer item6">footer</section>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>
+      victormikell.com || developer
+    </title>
 
+    <link
+      rel="stylesheet"
+      href="vmv2.css"
+    />
+    <link
+      rel="stylesheet"
+      href="card-style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <link
+      rel="icon"
+      href="./code-solid.svg"
+      class="icon"
+    />
+  </head>
+
+  <body>
+    <div class="container-top">
+      <!-- navbar section -->
+      <header class="header1 item1">
+        <img
+          class="logo"
+          src="vmdc-logo-white.png"
+        />
+        <!-- social media links -->
+        <div class="social-links">
+          <a
+            href="https://codepen.io/vmikell"
+            target="_blank"
+          >
+            <i
+              class="
+                fab
+                fa-codepen
+                codepen
+              "
+            ></i
+          ></a>
+          <a
+            href="https://github.com/vmikell"
+            target="_blank"
+          >
+            <i
+              class="
+                fab
+                fa-github
+                github
+              "
+            ></i
+          ></a>
+          <a
+            href="https://twitter.com/MikellVictor"
+            target="_blank"
+          >
+            <i
+              class="
+                fab
+                fa-twitter
+                twitter
+              "
+            ></i
+          ></a>
+        </div>
+        <!-- navbar links -->
+        <nav class="navbar">
+          <ul>
+            <li>
+              <a
+                href="#"
+                class="home link-effect"
+                >home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="
+                  about-me
+                  link-effect
+                "
+                >about me</a
+              >
+            </li>
+            <li>
+              <a
+                href="#projects"
+                class="
+                  projects
+                  link-effect
+                "
+                >projects</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="
+                  contact-me
+                  link-effect
+                "
+                >contact me</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <!-- mobile navbar secttion -->
+      <header class="header2">
+        <img
+          class="logo"
+          src="/html/vmv2/vmdc-logo-white.png"
+        />
+        <input
+          type="checkbox"
+          id="nav-toggle"
+          class="nav-toggle"
+        />
+        <nav>
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#about"
+                >About me</a
+              >
+            </li>
+            <li>
+              <a href="#projects"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a href="#contact"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <label
+          for="nav-toggle"
+          class="nav-toggle-label"
+          ><span></span>
+        </label>
+      </header>
+      <!-- main section- home -->
+      <div class="greeting-container">
+        <section class="greeting item2">
+          <div class="hello">
+            Hello,
+          </div>
+          <div class="my-name">
+            my name is Victor.
+          </div>
+          <div class="i-am">
+            I am a
+            <span class="designer"
+              >Designer</span
+            >
+            / Front End Developer,
+          </div>
+          <div class="living-in">
+            living in New England.
+          </div>
+        </section>
+      </div>
     </div>
-</body>
+    <!-- about section -->
+    <div class="slanted" id="about">
+      <section
+        class="about-section item3"
+      >
+        <header class="about-header">
+          I am a self-taught developer.
+        </header>
+        <article class="about-article">
+          Hey folks! I'm Victor, born
+          and raised in the Bronx, NY,
+          and currently residing in
+          Connecticut. I'm a father to
+          two of the most beautiful
+          little girls, and two fur
+          babies (woof & meow!). I've
+          spent a great deal of time
+          teaching myself HTML, CSS
+          (including bootstrap),
+          Javascript (some React &
+          learning Redux), and playing
+          around with C, Java and
+          Kotlin. I'm having an awesome
+          time navigating it all,
+          whether I'm dreaming up a
+          project to test my abilities
+          or I'm blowing through code
+          after getting stuck. My
+          timing, taking on this journey
+          wasn't exactly ideal, with the
+          global current events, however
+          not being able to network in
+          person has allowed me to
+          greatly expand my
+          resoursefulness (I never
+          thougt of using Google as a
+          skill until now!).
+          <br />
+          When I'm not sitting in front
+          of a computer, I love to
+          recharge by getting out on the
+          hiking trails. Harriman State
+          Park in NY and the local
+          trails in CT are my
+          playground, but I never miss a
+          chance to take a trip down to
+          the Great Smokey Mountain
+          National Park bordering NC and
+          TN! I've spent most of my
+          professional life working in
+          every imaginable aspect of
+          outdoor retail industry. I've
+          managed others in a retail
+          setting for brands like The
+          North Face and Patagonia, and
+          I'm currently working on the
+          corporate side of a high end
+          outdoor Footwear manufacturer.
+        </article>
+      </section>
+    </div>
+    <!-- projects section -->
+    <div id="projects">
+      <section
+        class="projects-container"
+      >
+        <!-- title -->
+        <div class="title">
+          <h2>
+            what I'm working on...
+          </h2>
+          <div class="underline"></div>
+        </div>
+        <!-- Project Cards -->
+        <div class="row card-container">
+          <div class="card card-1 col">
+            <div class="card-content">
+              <h3 class="card-title">
+                Technical Doc
+              </h3>
+              <p class="card-body">
+                Example of HTML & CSS
+                Documentation page.
+              </p>
+              <a
+                href="https://ecstatic-ardinghelli-f38285.netlify.app/"
+                target="_blank"
+                class="button"
+                >visit site</a
+              >
+              <a
+                href="https://github.com/vmikell/techdoc"
+                target="_blank"
+                class="button"
+                ><code
+                  >view code</code
+                ></a
+              >
+            </div>
+          </div>
+          <div class="card card-2 col">
+            <div class="card-content">
+              <h3 class="card-title">
+                Blackjack
+              </h3>
+              <p class="card-body">
+                JavaScript blackjack
+                game. Test your luck!
+              </p>
+              <a
+                href="https://relaxed-perlman-5e2b75.netlify.app/"
+                target="_blank"
+                class="button"
+                >visit site</a
+              >
+              <a
+                href="https://github.com/vmikell/blackjack"
+                target="_blank"
+                class="button"
+                ><code
+                  >view code</code
+                ></a
+              >
+            </div>
+          </div>
+          <div class="card card-3 col">
+            <div class="card-content">
+              <h3 class="card-title">
+                Something<br />
+                Fancy2
+              </h3>
+              <p class="card-body">
+                Example of HTML & CSS
+                Documentation page.
+              </p>
+              <a
+                href="#"
+                target="_blank"
+                class="button"
+                >visit site</a
+              >
+              <a
+                href="#"
+                target="_blank"
+                class="button"
+                ><code
+                  >view code</code
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- contact me section -->
+    <section
+      class="contact"
+      id="contact"
+    >
+      <header class="contact-header">
+        Interested in working together?
+      </header>
+      <div class="contact-container">
+        <div class="contact-btn">
+          <a
+            id="contact-link"
+            href="mailto:i.am@victormikell.com"
+            >email me</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- footer section -->
+    <nav class="footer-bar">
+      <a
+        href="#header-main"
+        class="footer-link"
+        >Home</a
+      >
+      <a
+        href="#about"
+        class="footer-link"
+        >About me</a
+      >
+      <a
+        href="#projects-div"
+        class="footer-link"
+        >Projects</a
+      >
+      <a
+        href="#contact"
+        class="footer-link"
+        >Contact</a
+      >
+    </nav>
+    <div class="footer-social">
+      <a
+        href="https://twitter.com/MikellVictor"
+        class="
+          fab
+          fa-twitter
+          footer-social
+          twitter-f
+        "
+        target="_blank"
+      ></a>
+      <a
+        href="https://github.com/vmikell"
+        class="
+          fab
+          fa-github
+          footer-social
+          github-f
+        "
+        target="_blank"
+      ></a>
+      <a
+        href="https://codepen.io/vmikell"
+        class="
+          fab
+          fa-codepen
+          footer-social
+          codepen-f
+        "
+        target="_blank"
+      ></a>
+    </div>
+    <footer>
+      Copyright Victor Mikell 2021
+    </footer>
+  </body>
 </html>
