@@ -448,21 +448,21 @@ contact section begins here
 .contact-btn {
   display: block;
   height: 2rem;
-  padding: .5rem;
-  font-size: 1.5rem;  
+  padding: 0.5rem;
+  font-size: 1.5rem;
   margin-bottom: 3rem;
 }
 .contact-btn a {
   border: 1px solid white;
   border-radius: 5px;
   color: white;
-  padding: .5rem
+  padding: 0.5rem;
 }
-.contact-btn a:hover{
-  color:var(--background);
+.contact-btn a:hover {
+  color: var(--background);
   background: white;
 }
-.resume{
+.resume {
   margin-top: 1rem;
   margin-bottom: 3rem;
 }
@@ -568,11 +568,7 @@ mobile responsive begins here
     font-size: clamp(0.75rem, 2.1vw + 1rem, 4rem);
   }
   .logo {
-    grid-area: logo;
-    margin-top: 1rem;
-    margin-left: 1rem;
-    max-height: 3rem;
-    max-width: 11rem;
+   display: none;
   }
 
   .greeting {
@@ -587,12 +583,15 @@ mobile responsive begins here
 
   .header2 {
     display: block;
+    position: absolute;
     opacity: 0.75;
     background: var(--background);
     text-align: center;
     position: fixed;
     z-index: 999;
     width: 100%;
+    height: 60px;
+    top: -1rem;
   }
 
   .nav-toggle {
@@ -684,8 +683,8 @@ mobile responsive begins here
 
   .about-section {
     height: 150vh;
-    display:block;
-    margin:auto;
+    display: block;
+    margin: auto;
 
     position: relative;
     top: 0;
@@ -719,48 +718,90 @@ mobile responsive begins here
     margin-left: -2rem;
   }
   .projects-container {
-    display:flex;
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20rem;
     padding-top: 20rem;
   }
-  
-  .card-body,
-  .card{
-    margin:0 auto;
-    max-height:380px;
+  .card-4 {
+    display: grid;
+    place-self: center;
   }
-  .card-1{
+
+  .card-body,
+  .card {
+    margin: 0 auto;
+    max-height: 380px;
+  }
+  .card-1 {
     margin-right: 10px;
   }
 }
-@media (max-width: 415px) {
-  .logo{
-    display:none;
-  }
+@media (max-width: 425px) {
   .skills {
     top: 55rem;
-    bottom:-15rem
+    bottom: -15rem;
   }
   .projects-container {
     margin-top: 15rem;
     padding-top: 0rem;
   }
-  .contact-header{
-    margin-bottom:1rem;
+  .contact-header {
+    margin-bottom: 1rem;
   }
-   .card-1{
+  .card-1 {
     margin-right: auto;
+  }
+  .header2 {
+    margin-top: 1rem;
+  }
+
+  .scroll-down {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .scroll-down span:nth-child(2) {
+    animation-delay: -0.2s;
+  }
+  .scroll-down span:nth-child(3) {
+    animation-delay: -0.4s;
+  }
+  .scroll-down span {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    transform: rotate(45deg);
+    margin: -10px;
+    bottom: -18rem;
+    animation: animate 2s infinite;
+  }
+  @keyframes animate {
+    0% {
+      opacity: 0;
+      transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: rotate(45deg) translate(20px, 20px);
+    }
   }
 }
 
-@media (max-width: 365px){
-  .skills{
-    bottom:-30rem
+@media (max-width: 365px) {
+  .skills {
+    bottom: -30rem;
   }
-   .projects-container {
+  .projects-container {
     margin-top: 29rem;
     padding-top: 0rem;
   }

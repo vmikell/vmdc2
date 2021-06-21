@@ -39,7 +39,7 @@
 }
 
 .card-1 {
-  background-image: url(./technicalDocumentationScreenShot.jpg);
+  background-image: url(./broken-clouds-sc.jpg);
 }
 
 .card-2 {
@@ -49,6 +49,10 @@
 
 .card-3 {
   background-image: url(./she-wants-sushi.png);
+}
+
+.card-4 {
+  background-image: url(./technicalDocumentationScreenShot.jpg);
 }
 
 .card:hover,
